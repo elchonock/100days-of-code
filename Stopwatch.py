@@ -6,17 +6,30 @@ import datetime
 class Stopwatch:
     def __init__(self):
         self.start_time = 0
-        self.saved = []
+        # self.state_button = 'normal'
+        # self.saved = []
+
+
+    # def state_but(self):
+    #     self.state_button = 'disabled'
+    #     return self.state_button
 
 
     def start(self):
         self.start_time = time.time()
-        # return self.start_time
+
+        # ----- попробуй генератор
+        # while True:
+        #     yield time.time() - self.start_time + 1
+        #     time.sleep(1)
+        #     self.start_time += 1
+    #     ------
 
 
     def stop(self):
         time_counter = time.time() - self.start_time
-        self.saved.append(time_counter)
+        # self.state_button = 'disabled'
+        # self.saved.append(time_counter)
 
 
     def reset(self):

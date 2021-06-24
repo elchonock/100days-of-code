@@ -10,23 +10,27 @@ import Stopwatch as st
 
 stopwatch = st.Stopwatch()
 
+# почитай про лямбда, попробуй setup вконец
+
 tk = Tk()
 tk.title("Stopwatch")
 label = Label(tk, text="00:00:00", font="Arial 28 bold")
 label.pack(pady=(35, 0))
 
 
+
 def setup():
 
     frame = Frame(tk)
-    button_1 = Button(frame, text="START", width=6, command=start, background="#AF2A7A", font="Arial 18 bold")
-    button_1.pack(side="left")
-    button_2 = Button(frame, text="STOP", width=6, command=stop, background="#AF2A7A", font="Arial 18 bold")
-    button_2.pack(side="left")
+    start_button = Button(frame, text="START", width=6, command=start, background="#AF2A7A", font="Arial 18 bold")
+    start_button.pack(side="left")
+    stop_button = Button(
+        frame, text="STOP", width=6, command=stop, background="#AF2A7A", font="Arial 18 bold")
+    stop_button.pack(side="left")
     reset_button = Button(frame, text="RESET", width=6, command=reset, background="#AF2A7A", font="Arial 18 bold")
     reset_button.pack(side="left")
-    save_button = Button(frame, text="SAVED", width=6, command=saved, background="#AF2A7A", font="Arial 18 bold")
-    save_button.pack(side="left")
+    # save_button = Button(frame, text="SAVED", width=6, command=saved, background="#AF2A7A", font="Arial 18 bold")
+    # save_button.pack(side="left")
     frame.pack(anchor="center", pady=5)
 
 
@@ -34,24 +38,26 @@ def create_label(text):
     label["text"] = text
 
 
-# def create_label(text):
-#     label = Label(tk, text=text, font="Arial 28 bold")
-#     label.pack(pady=(35, 0))
-
 def start():
     stopwatch.start()
-    create_label(timedelta(seconds=(stopwatch.display_time())))
+    create_label(timedelta(stopwatch.display_time()))
+
+
 
 def stop():
+
     stopwatch.stop()
     create_label(timedelta(seconds=(stopwatch.display_time())))
+
+
+
 
 def reset():
     stopwatch.reset()
     create_label("00:00:00")
 
-def saved():
-    create_label(stopwatch.saved)
+# def saved():
+#     create_label(stopwatch.saved)
 
 
 canvas = Canvas(tk, height=50, width=300)
