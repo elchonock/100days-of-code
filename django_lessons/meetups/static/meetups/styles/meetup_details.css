@@ -1,0 +1,73 @@
+section {
+  max-width: 40rem;
+  margin: 3rem auto;
+}
+section h2{
+  max-width: 40rem;
+  margin: 3rem auto;
+  text-align: center;
+  font-variant: small-caps;
+}
+
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.meetup_items {
+  margin: 1rem 0;
+  background-color: #604EC9;
+  padding: 2rem;
+  color: white;
+  border-radius: 4px;
+}
+
+.meetup_summary {
+  display: flex;
+  align-items: flex-start;
+}
+
+.meetup_image {
+  margin-right: 2rem;
+}
+
+.meetup_image img {
+  width: 8rem;
+  height: 8rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.meetup_details h3 {
+  color: inherit;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+.meetup_details address {
+  font-style: italic;
+
+}
+
+.meetup_actions {
+  text-align: right;
+  font-size: 1.5rem;
+}
+
+.meetup_actions .btn{
+  text-decoration: none;
+  color: #D3D9E2;
+  margin-top: 1.5rem;
+  background:url("https://img.icons8.com/dusk/64/000000/external-link.png") no-repeat 100% 0;
+  background-size: 35px 35px;
+  padding-right: 35px;
+
+
+}
+
+.meetup_actions .btn:hover {
+  background-color: #4005AD;
+  border-color: #ba82fb;
+}
